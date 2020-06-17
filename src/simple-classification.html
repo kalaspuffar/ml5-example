@@ -25,18 +25,19 @@
         </p>
 
         <script>
-            const classifier = new ml5.ImageClassifier('SqueezeNet');
+            const classifier = ml5.imageClassifier('MobileNet');
+            const result = document.getElementById('result');
+            const probability = document.getElementById('probability');
         
             function onImageReady() {
                 let img = document.getElementById('image');
-                classifier.predict(img, 10, gotResult);
+
+                classifier.predict(img, function(results) {
+                    result.innerText = results[0].className;
+                    probability.innerText = results[0].probability.toFixed(4);
+                });
             }
         
-            function gotResult(results) {
-                document.getElementById('result').innerText = results[0].className;
-                document.getElementById('probability').innerText = results[0].probability.toPrecision(2);
-            }
-
             function getRandomInt(max) {
                 return Math.floor(Math.random() * Math.floor(max));
             }

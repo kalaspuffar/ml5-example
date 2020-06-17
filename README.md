@@ -16,7 +16,7 @@ Starting the server
 npm start
 ```
 
-After you've done that you simply add any images you like, as jpg format, into the images directory and rename them to use a number in sequence starting with zero followed by the jpg extension. Example 0.jpg, 1.jpg, 2.jpg a.s.o.
+After you've done that you simply add any images you like, as jpg format, into the images directory. Rename them to use a number in sequence starting with zero followed by the jpg extension. Example 0.jpg, 1.jpg, 2.jpg a.s.o.
 
 Then you change the simple-classification.html to be aware of the number of images you have on disk.
 
